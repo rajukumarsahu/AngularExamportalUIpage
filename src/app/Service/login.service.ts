@@ -23,7 +23,9 @@ export class LoginService {
     return true;
 
   }
-
+  public getData(logindata:any){
+    return this.http.get(`${baseUrl}/user/UserDetails`,logindata);
+  }
 
   //user is login or not
   public isLogin(){

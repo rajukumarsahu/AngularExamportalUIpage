@@ -1,19 +1,19 @@
  
 
 <div class="bootstrap-wrapper">
-    <div class="container">
+    <div class="container col-md-6">
         
-        <div class="row" style="margin-top: 20px;">
-            <div class="col-md-6 offset-md-3">
+        <div class="row" style="margin-left:20px">
+            <div class="col-md-4 offset-md-3">
             <mat-card>
                 <div class="container text-center">
                     <img src="../../../assets/logo2_1.jpg" alt="">
 
                 </div>
                 <h1 class="text-center">Register here!!</h1>
-<!--//{{user|json}}-->
+                              <!--//{{user|json}}-->
                   
-                <form (ngSubmit)="formSubmit()" style="text-align: center;" >
+                <form (ngSubmit)="formSubmit()"  style="text-align: center;" >
                     <mat-form-field appearance="outline" class="full-width">
                         <mat-label>Enter User Name</mat-label>
                         <input required
@@ -82,13 +82,11 @@
                          
       
                       </div>
+                       
+                      
                 </form>
 
-                <form (ngSubmit)="getdata()">
-
-                    <button type="submit" mat-raised-button color="primary">Getdata</button>  
-
-                </form>
+               
               </mat-card>
         </div>
     </div>

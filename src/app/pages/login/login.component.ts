@@ -2,7 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router, RouterLink } from '@angular/router';
 import { LoginService } from 'src/app/Service/login.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit{
     console.log('login button click');
     // alert("ht");
     if(this.logindata.username.trim()==''||this.logindata.username==null){
-        this.snack.open("user name is required!!",'',{
+        this.snack.open("user name is required!!",'ok',{
           duration:3000,
         });
         return;
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit{
     this.login.generateToken(this.logindata).subscribe((data:any)=>{
       console.log('sucess');
       console.log(data)
-
+      
       //login token stored and validate
       this.login.loginUser(data.token);
       this.login.currentuser().subscribe((user:any)=>{
@@ -68,4 +68,5 @@ export class LoginComponent implements OnInit{
     );
     
   }
+   
 }
