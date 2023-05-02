@@ -1,0 +1,52 @@
+<mat-toolbar color="primary">
+    <a
+    *ngIf="!login.isLogin()"
+    routerLink="/" 
+    mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu_book</mat-icon>
+    </a>
+    
+    <span>Exam Portal</span>
+    <span class="example-spacer"></span>
+    <!-- <span class="example-spacer">
+        <a [routerLink]="'getdata'"
+        mat-icon-button class="example-icon favorite-icon mr20" aria-label="Example icon-button with heart icon">
+           
+        <button type="submit" mat-raised-button color="primary">Getdata</button> &nbsp;&nbsp;
+        
+    </a>
+
+    </span> -->
+
+    <marquee><h1 style="color:pink;">Welcome To My Exam Portal</h1></marquee>
+
+    <a *ngIf="!login.isLogin()"
+     
+     [routerLink]="'login'"
+    mat-icon-button class="example-icon favorite-icon " aria-label="Example icon-button with heart icon">
+      
+      <h4>login</h4>
+    
+</a>
+    <a *ngIf="!login.isLogin()"
+     
+     [routerLink]="'signup'" mat-icon-button class="example-icon mr20 ml20" aria-label="">
+      <h4>Register</h4>  
+    </a>
+
+    <button *ngIf="login.isLogin()"
+     
+         class="example-icon mr20 ml20" aria-label=""> 
+         
+          <h5>Welcome</h5>
+          {{login.getuser().username}}
+         
+     
+    </button>
+    <a  
+    *ngIf="login.isLogin()"
+     (click)="logout()"
+     [routerLink]="'Logout'" mat-icon-button class="example-icon  " aria-label="ml20">
+      <h4>Logout</h4>  
+    </a>
+  </mat-toolbar>
